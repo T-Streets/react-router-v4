@@ -34,6 +34,8 @@ class App extends Component {
   }
 
   render() {
+    const message = this.state.secretMessage
+    // console.log(message)
     return (
       <div className="App">
         <Router>
@@ -43,9 +45,7 @@ class App extends Component {
               <li><Link to='/hunters'>SpaceCowboy</Link></li>
               <li><Link to={{
                 pathname: '/pass-props',
-                state: {
-                secretMessage: this.state.secretMessage
-                },
+                state: { message },
               }}>Pass Props To Components</Link></li>
               <li><Link to='/matched'>Matched</Link></li>
               <li><Link to='/old-page'>Old page to be redirected</Link></li>

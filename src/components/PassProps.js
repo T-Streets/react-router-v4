@@ -23,19 +23,20 @@ const routes = [
 
 export default class PassProps extends Component {
     state = {
-        secretMessage: null
+        message: null
     }
-    
     /**
      * This receives the state set by the Link tag in app.js
      */
     componentDidMount() {
-        const secretMessage  = this.props.location.state
+        const { secretMessage } = this.props.location.state
         this.setState({
-            secretMessage
+            message: secretMessage
         })
     }
     render(){
+        const renderProp = this.state.message
+        console.log(renderProp)
         return(
             <Router>
                 <div>
@@ -58,7 +59,7 @@ export default class PassProps extends Component {
                             render={props => <C {...props} fetchInitialData={fetchInitialData('id')} />}
                         />
                     ))}
-                <h3>{this.state.secretMessage}</h3>
+                    <h2>{renderProp}</h2>
                 </div>
             </Router>
         )
