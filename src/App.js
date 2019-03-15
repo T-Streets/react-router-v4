@@ -3,6 +3,7 @@ import './App.css';
 import SpaceCowboy from './components/SpaceCowboy'
 import PassProps from './components/PassProps'
 import Sidebar from './components/Sidebar'
+import CustomLink from './components/CustomLink'
 import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom'
 
 const Home = () => (
@@ -49,6 +50,7 @@ class App extends Component {
               <li><Link to='/matched'>Matched</Link></li>
               <li><Link to='/old-page'>Old page to be redirected</Link></li>
               <li><Link to='/sidebar'>Sidebar</Link></li>
+              <li><Link to='/custom-link'>Custom Link</Link></li>
             </ul>
 
             <hr />
@@ -59,6 +61,7 @@ class App extends Component {
               <Route path='/pass-props' component={PassProps} />
               <Route path='/matched' component={Matched} />
               <Route path='/sidebar' component={Sidebar} />
+              <Route path='/custom-link' component={CustomLink} />
               <Route component={NoMatch} />
             </Switch>
             {/* when a route is passed without a path it will always be rendered if the path in url is not exact ie 
